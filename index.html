@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Electroservicio Vir | Electricidad Domiciliaria</title>
+
+<meta name="description" content="Electroservicio Vir - Instalaciones, mantenimiento, diagnóstico de fallas, mediciones y tableros eléctricos domiciliarios.">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0d0f;
+    color: #f1f1f1;
+    line-height: 1.6;
+}
+
+header {
+    background: #111417;
+    border-bottom: 2px solid #f5a900;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #f5a900;
+}
+
+.logo span {
+    color: white;
+}
+
+.nav a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #f5a900;
+}
+
+.hero {
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 20px;
+    background:
+        radial-gradient(circle at center, #22282d 0%, #0b0d0f 65%);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid #f5a900;
+    color: #f5a900;
+    padding: 7px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(38px, 8vw, 72px);
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #f5a900;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #c7c7c7;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.btn-primary {
+    background: #f5a900;
+    color: #111;
+}
+
+.btn-primary:hover {
+    background: #ffbd32;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid #555;
+    color: white;
+}
+
+.btn-secondary:hover {
+    border-color: #f5a900;
+    color: #f5a900;
+}
+
+section {
+    padding: 70px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #999;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #14181b;
+    border: 1px solid #292e32;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: #f5a900;
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #f5a900;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+.quote-section {
+    background: #101315;
+}
+
+.form-box {
+    max-width: 850px;
+    margin: auto;
+    background: #15191c;
+    border: 1px solid #30363a;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label.main-label {
+    display: block;
+    color: #f5a900;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    background: #0b0d0f;
+    color: white;
+    border: 1px solid #3a3f43;
+    border-radius: 7px;
+    padding: 13px;
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f5a900;
+}
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 10px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    background: #0e1113;
+    border: 1px solid #292e32;
+    padding: 11px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.check:hover {
+    border-color: #f5a900;
+}
+
+.check input {
+    accent-color: #f5a900;
+}
+
+.whatsapp-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.contact-link {
+    background: #15191c;
+    border: 1px solid #30363a;
+    padding: 15px 22px;
+    border-radius: 9px;
+    color: white;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    border-color: #f5a900;
+    color: #f5a900;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #080a0b;
+    border-top: 1px solid #24282b;
+    color: #777;
+    font-size: 13px;
+}
+
+.floating-whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #25d366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 27px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.4);
+    z-index: 999;
+}
+
+@media (max-width: 650px) {
+    .nav {
+        justify-content: center;
+    }
+
+    .nav a {
+        display: none;
+    }
+
+    section {
+        padding: 55px 15px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    .hero {
+        min-height: 70vh;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+        <div class="logo">⚡ ELECTROSERVICIO <span>VIR</span></div>
+
+        <div>
+            <a href="#servicios">Servicios</a>
+            <a href="#presupuesto">Presupuesto</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="badge">ELECTRICIDAD DOMICILIARIA</div>
+
+        <h1>
+            Soluciones eléctricas<br>
+            <span>para tu hogar.</span>
+        </h1>
+
+        <p>
+            Instalaciones, mantenimiento, diagnóstico de fallas,
+            mediciones y armado de tableros eléctricos.
+        </p>
+
+        <div class="buttons">
+            <a href="#presupuesto" class="btn btn-primary">
+                Solicitar presupuesto
+            </a>
+
+            <a href="#servicios" class="btn btn-secondary">
+                Ver servicios
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section id="servicios">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Servicios</h2>
+            <p>Soluciones eléctricas para instalaciones domiciliarias.</p>
+        </div>
+
+        <div class="services">
+
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Instalaciones</h3>
+                <p>
+                    Instalaciones nuevas, ampliaciones, cableado,
+                    canalizaciones, tomacorrientes e iluminación.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔧</div>
+                <h3>Tableros eléctricos</h3>
+                <p>
+                    Armado, modificación, mantenimiento y revisión
+                    de tableros y protecciones eléctricas.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔎</div>
+                <h3>Diagnóstico</h3>
+                <p>
+                    Búsqueda de fallas, cortocircuitos,
+                    fugas y problemas en instalaciones.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📐</div>
+                <h3>Mediciones</h3>
+                <p>
+                    Mediciones eléctricas, tensión, continuidad
+                    y pruebas de aislación de conductores.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛠️</div>
+                <h3>Mantenimiento</h3>
+                <p>
+                    Mantenimiento preventivo y revisión general
+                    de instalaciones eléctricas.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🔌</div>
+                <h3>Reparaciones</h3>
+                <p>
+                    Reparación y reemplazo de componentes
+                    y conductores de instalaciones domiciliarias.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="presupuesto" class="quote-section">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Solicitá tu presupuesto</h2>
+
+            <p>
+                Seleccioná los trabajos que necesitás y
+                envianos tu consulta por WhatsApp.
+            </p>
+        </div>
+
+        <div class="form-box">
+
+            <div class="form-group">
+
+                <label class="main-label">Instalaciones</label>
+
+                <div class="check-grid">
+
+                    <label class="check">
+                        <input type="checkbox" value="Instalación eléctrica nueva">
+                        Instalación eléctrica nueva
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Ampliación de instalación">
+                        Ampliación de instalación
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Tomacorrientes">
+                        Tomacorrientes
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Iluminación">
+                        Iluminación
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Cableado">
+                        Cableado
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Canalización">
+                        Canalización
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Circuito para aire acondicionado">
+                        Circuito para aire acondicionado
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Circuito para termotanque">
+                        Circuito para termotanque
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label">Tableros y protecciones</label>
+
+                <div class="check-grid">
+
+                    <label class="check">
+                        <input type="checkbox" value="Armado de tablero">
+                        Armado de tablero
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Modificación de tablero">
+                        Modificación de tablero
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Instalación de termomagnética">
+                        Termomagnética
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Instalación de interruptor diferencial">
+                        Interruptor diferencial
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Revisión de protecciones">
+                        Revisión de protecciones
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Mantenimiento de tablero">
+                        Mantenimiento de tablero
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label">Diagnóstico y mediciones</label>
+
+                <div class="check-grid">
+
+                    <label class="check">
+                        <input type="checkbox" value="Detección de fuga">
+                        Detección de fuga
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Búsqueda de cortocircuito">
+                        Búsqueda de cortocircuito
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Diagnóstico de falla">
+                        Diagnóstico de falla
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Prueba de aislación">
+                        Prueba de aislación
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Medición de tensión">
+                        Medición de tensión
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Prueba de continuidad">
+                        Prueba de continuidad
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label">Mantenimiento</label>
+
+                <div class="check-grid">
+
+                    <label class="check">
+                        <input type="checkbox" value="Mantenimiento preventivo">
+                        Mantenimiento preventivo
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Revisión general">
+                        Revisión general
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Reparación de instalación">
+                        Reparación de instalación
+                    </label>
+
+                    <label class="check">
+                        <input type="checkbox" value="Reemplazo de cables">
+                        Reemplazo de cables
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label" for="nombre">
+                    Tu nombre
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ej: Juan Pérez"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label" for="zona">
+                    Localidad / zona
+                </label>
+
+                <input
+                    type="text"
+                    id="zona"
+                    placeholder="Ej: Gobernador Virasoro"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label class="main-label" for="descripcion">
+                    Contanos brevemente qué necesitás
+                </label>
+
+                <textarea
+                    id="descripcion"
+                    placeholder="Ej: Necesito agregar dos tomacorrientes en la cocina..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="btn btn-primary whatsapp-btn"
+                onclick="enviarWhatsApp()"
+            >
+                📲 Solicitar presupuesto por WhatsApp
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contacto" class="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Contacto</h2>
+
+            <p>
+                Estamos para ayudarte con tus instalaciones eléctricas.
+            </p>
+
+        </div>
+
+        <div class="contact-box">
+
+            <a
+                class="contact-link"
+                href="https://wa.me/5493756599765"
+                target="_blank"
+            >
+                📲 WhatsApp
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://instagram.com/electroservicio.vir"
+                target="_blank"
+            >
+                📷 Instagram
+            </a>
+
+            <a
+                class="contact-link"
+                href="https://www.facebook.com/share/19WxkmFUQS/"
+                target="_blank"
+            >
+                👍 Facebook
+            </a>
+
+        </div>
+
+        <p style="margin-top:25px;color:#888;">
+            📍 Gobernador Virasoro y zonas cercanas
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Electroservicio Vir · Electricidad Domiciliaria
+
+</footer>
+
+
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/5493756599765"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+    📲
+</a>
+
+
+<script>
+
+function enviarWhatsApp() {
+
+    const nombre = document.getElementById("nombre").value.trim();
+
+    const zona = document.getElementById("zona").value.trim();
+
+    const descripcion =
+        document.getElementById("descripcion").value.trim();
+
+    const seleccionados =
+        document.querySelectorAll(
+            'input[type="checkbox"]:checked'
+        );
+
+    let servicios = [];
+
+    seleccionados.forEach(function(item) {
+        servicios.push("• " + item.value);
+    });
+
+    if (servicios.length === 0) {
+
+        alert("Por favor seleccioná al menos un servicio.");
+
+        return;
+    }
+
+
+    let mensaje =
+        "Hola Electroservicio Vir. Quisiera solicitar un presupuesto.%0A%0A";
+
+
+    if (nombre !== "") {
+
+        mensaje +=
+            "Nombre: " +
+            encodeURIComponent(nombre) +
+            "%0A";
+
+    }
+
+
+    if (zona !== "") {
+
+        mensaje +=
+            "Localidad/Zona: " +
+            encodeURIComponent(zona) +
+            "%0A";
+
+    }
+
+
+    mensaje += "%0AServicios solicitados:%0A";
+
+
+    servicios.forEach(function(servicio) {
+
+        mensaje +=
+            encodeURIComponent(servicio) +
+            "%0A";
+
+    });
+
+
+    if (descripcion !== "") {
+
+        mensaje +=
+            "%0ADescripción:%0A" +
+            encodeURIComponent(descripcion) +
+            "%0A";
+
+    }
+
+
+    mensaje +=
+        "%0AEnviado desde la página web de Electroservicio Vir.";
+
+
+    const url =
+        "https://wa.me/5493756599765?text=" +
+        mensaje;
+
+
+    window.open(url, "_blank");
+
+}
+
+</script>
+
+</body>
+              </html>
